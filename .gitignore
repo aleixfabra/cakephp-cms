@@ -1,0 +1,17 @@
+# CakePHP
+/vendor/*
+/config/app.php
+/tmp/*
+/logs/*
+
+# Less
+/webroot/css/lessphp*
+
+# Composer
+composer.phar
+
+# Bower
+/webroot/vendor/*
+
+# Tmp editor files
+*.sublime-workspace

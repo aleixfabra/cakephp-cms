@@ -41,6 +41,11 @@ use Cake\Routing\Router;
  */
 Router::defaultRouteClass('Route');
 
+Router::prefix('admin', function ($routes) {
+    $routes->connect('/', ['controller' => 'Pages', 'action' => 'dashboard']);
+    $routes->fallbacks('InflectedRoute');
+});
+
 Router::scope('/', function ($routes) {
     /**
      * Here, we are connecting '/' (base path) to a controller called 'Pages',

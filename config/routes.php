@@ -42,7 +42,7 @@ use Cake\Routing\Router;
 Router::defaultRouteClass('Route');
 
 Router::prefix('admin', function ($routes) {
-    $routes->connect('/', ['controller' => 'Pages', 'action' => 'dashboard']);
+    $routes->connect('/', ['controller' => 'Users', 'action' => 'index']);
     $routes->fallbacks('InflectedRoute');
 });
 

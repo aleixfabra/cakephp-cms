@@ -21,6 +21,12 @@ class User extends Entity
         'role'     => true
     ];
 
+    /**
+     * Generates password hash.
+     *
+     * @param  string $password Plain text password to hash.
+     * @return string Password hash
+     */
     protected function _setPassword($value)
     {
         $hasher = new DefaultPasswordHasher();

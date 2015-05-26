@@ -103,6 +103,11 @@ class UsersController extends AppController
         return $this->redirect(['action' => 'index']);
     }
 
+    /**
+     * Login method
+     *
+     * @return void Redirects on successful login, renders view otherwise.
+     */
     public function login()
     {
         if ($this->request->is('post')) {
@@ -115,6 +120,11 @@ class UsersController extends AppController
         }
     }
 
+    /**
+     * Logout method
+     *
+     * @return void Redirects on successful logout.
+     */
     public function logout()
     {
         return $this->redirect($this->Auth->logout());

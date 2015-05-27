@@ -42,7 +42,11 @@ use Cake\Routing\Router;
 Router::defaultRouteClass('Route');
 
 Router::prefix('admin', function ($routes) {
-    $routes->connect('/', ['controller' => 'Users', 'action' => 'index']);
+    $routes->connect(
+        '/',
+        ['controller' => 'Users', 'action' => 'index'],
+        ['_name' => 'admin']
+    );
     $routes->fallbacks('InflectedRoute');
 });
 
@@ -58,6 +62,13 @@ Router::scope('/', function ($routes) {
      * ...and connect the rest of 'Pages' controller's URLs.
      */
     $routes->connect('/pages/*', ['controller' => 'Pages', 'action' => 'display']);
+
+    $routes->connect(
+        '/cakephp_conf',
+        ['controller' => 'Pages', 'action' => 'display', 'cakephp_conf'],
+        ['_name' => 'cakephp_conf']
+    );
+
 
     /**
      * Connect catchall routes for all controllers.

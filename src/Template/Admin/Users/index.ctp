@@ -20,7 +20,7 @@
     <?php foreach ($users as $user): ?>
         <tr>
             <td><?= $this->Number->format($user->id) ?></td>
-            <td><?= h($user->username) ?></td>
+            <td><?= $this->Html->link(h($user->username), ['action' => 'edit', $user->id]) ?></td>
             <td><?= h($user->role) ?></td>
             <td><?= h($user->created) ?></td>
             <td><?= h($user->modified) ?></td>

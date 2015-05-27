@@ -72,6 +72,9 @@ class UsersController extends AppController
             'contain' => []
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
+            if (empty($this->request->data['password'])) {
+                unset($this->request->data['password']);
+            }
             $user = $this->Users->patchEntity($user, $this->request->data);
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('The user has been saved.'));
@@ -80,6 +83,7 @@ class UsersController extends AppController
                 $this->Flash->error(__('The user could not be saved. Please, try again.'));
             }
         }
+        unset($user->password);
         $this->set(compact('user'));
         $this->set('_serialize', ['user']);
         $this->render('add');

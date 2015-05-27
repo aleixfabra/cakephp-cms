@@ -35,18 +35,32 @@ class UsersTable extends Table
      */
     public function validationDefault(Validator $validator)
     {
+        $validator->provider('custom', 'App\Model\Validation\MainValidator');
         $validator
             ->add('id', 'valid', ['rule' => 'numeric'])
             ->allowEmpty('id', 'create');
-            
+
         $validator
-            ->allowEmpty('username');
-            
+            ->notEmpty('username', __('A username is required'));
+
         $validator
-            ->allowEmpty('password');
-            
+            ->add('password', [
+                'length' => [
+                    'rule'    => ['lengthBetween', 6, 30],
+                    'message' => __('Password should be at least 6 chars long')
+                ]
+            ])
+            ->allowEmpty('password', 'update');
+
         $validator
-            ->allowEmpty('role');
+            ->add('password_confirm', 'custom', [
+                'rule'     => ['identicalFields', 'password'],
+                'provider' => 'custom'
+            ])
+            ->allowEmpty('password_confirm', 'update');
+
+        $validator
+            ->notEmpty('role', __('A role is required'));
 
         return $validator;
     }

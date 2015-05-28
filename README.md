@@ -1,10 +1,16 @@
-# CakePHP CMS Skeleton
+# CakePHP CMS
 
-A skeleton for creating CMS applications with [CakePHP](http://cakephp.org) 3.x
+Project for creating CMS applications with [CakePHP](http://cakephp.org) 3.x
 
 ## Installation
 
-TODO
+1. Download [Composer](http://getcomposer.org/doc/00-intro.md) or update `composer self-update`.
+2. Run `php composer.phar install`.
+
+If Composer is installed globally, run
+```bash
+composer install
+```
 
 ## What is included?
 * Users CRUD

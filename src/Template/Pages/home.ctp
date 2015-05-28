@@ -1,4 +1,4 @@
-<h1>Welcome to CakePHP CMS Skeleton</h1>
+<h1>Welcome to CakePHP CMS</h1>
 <h3>Start</h3>
 <ul>
     <li>Access admin <?= $this->Html->link(__('here'), ['_name' => 'admin']) ?>.</li>

@@ -28,6 +28,5 @@ configuration relevant for your application.
 * Add sidebar
 * Roles CRUD
 * Authorization (who’s allowed to access what)
-* Migrations
 * Security
 * Testing

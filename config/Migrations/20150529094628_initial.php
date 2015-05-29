@@ -25,6 +25,7 @@ class Initial extends AbstractMigration
             ])
             ->create();
         $this->execute('insert into roles(name) values ("Admin")');
+        $this->execute('insert into roles(name) values ("User")');
 
         $table = $this->table('users');
         $table

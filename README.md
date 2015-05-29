@@ -11,18 +11,27 @@ If Composer is installed globally, run
 ```bash
 composer install
 ```
-
-## What is included?
-* Users CRUD
-* Authentication (Login and Logout)
-
 ## Configuration
 
 Read and edit `config/app.php` and setup the 'Datasources' and any other
 configuration relevant for your application.
 
+Execute the following command to create the default tables in your database:
+```bash
+bin/cake migrations migrate
+```
+
+## What is included?
+* Users CRUD
+* Authentication (Login and Logout)
+* Migrations
+
+## Default settings
+After exectuing migrations, there's a default user to login in the CMS:
+* username: admin
+* password: 123456
+
 ## TODO
-* Add default admin user
 * Add logout button
 * Clean views (remove unnecessary classes, etc) => Layout plugin to style views
 * Add sidebar

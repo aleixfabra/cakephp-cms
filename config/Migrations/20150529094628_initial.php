@@ -57,7 +57,7 @@ class Initial extends AbstractMigration
             ->create();
         $hasher = new DefaultPasswordHasher();
         $password = $hasher->hash('123456');
-        $this->execute(sprintf('insert into users(username, password, role_id) values ("Admin", "%s", 1)', $password));
+        $this->execute(sprintf('insert into users(username, password, role_id) values ("admin", "%s", 1)', $password));
     }
 
     public function down()

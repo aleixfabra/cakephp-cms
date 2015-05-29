@@ -22,9 +22,7 @@
                 'type'  => 'password',
                 'label' => $add_view ? __('Confirm password') : __('Confirm new password')
             ]);
-            echo $this->Form->input('role', [
-                'options' => ['admin' => 'Admin', 'user' => 'User']
-            ]);
+            echo $this->Form->input('role_id');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

@@ -55,6 +55,7 @@ class UsersController extends AppController
                 $this->Flash->error(__('The user could not be saved. Please, try again.'));
             }
         }
+        $this->__setSelectorsOptions();
         $this->set(compact('user'));
         $this->set('_serialize', ['user']);
     }
@@ -84,6 +85,7 @@ class UsersController extends AppController
             }
         }
         unset($user->password);
+        $this->__setSelectorsOptions();
         $this->set(compact('user'));
         $this->set('_serialize', ['user']);
         $this->render('add');
@@ -133,5 +135,11 @@ class UsersController extends AppController
     public function logout()
     {
         return $this->redirect($this->Auth->logout());
+    }
+
+    private function __setSelectorsOptions() {
+        $query = $this->Users->Roles->find('list');
+        $roles = $query->toArray();
+        $this->set(compact('roles'));
     }
 }

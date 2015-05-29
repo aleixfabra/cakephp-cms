@@ -25,6 +25,7 @@ class UsersTable extends Table
         $this->displayField('id');
         $this->primaryKey('id');
         $this->addBehavior('Timestamp');
+        $this->hasOne('Roles');
     }
 
     /**
@@ -60,7 +61,7 @@ class UsersTable extends Table
             ->allowEmpty('password_confirm', 'update');
 
         $validator
-            ->notEmpty('role', __('A role is required'));
+            ->notEmpty('role_id', __('A role is required'));
 
         return $validator;
     }

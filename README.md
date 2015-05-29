@@ -29,5 +29,6 @@ configuration relevant for your application.
 * Add Role model (A user has one role)
 * Roles CRUD
 * Authorization (who’s allowed to access what)
+* Migrations
 * Security
 * Testing

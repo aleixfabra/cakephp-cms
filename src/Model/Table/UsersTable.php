@@ -25,7 +25,7 @@ class UsersTable extends Table
         $this->displayField('id');
         $this->primaryKey('id');
         $this->addBehavior('Timestamp');
-        $this->hasOne('Roles');
+        $this->belongsTo('Roles');
     }
 
     /**

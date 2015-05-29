@@ -21,7 +21,7 @@
         <tr>
             <td><?= $this->Number->format($user->id) ?></td>
             <td><?= $this->Html->link(h($user->username), ['action' => 'edit', $user->id]) ?></td>
-            <td><?= h($user->role) ?></td>
+            <td><?= h($user->role['name']) ?></td>
             <td><?= h($user->created) ?></td>
             <td><?= h($user->modified) ?></td>
             <td class="actions">

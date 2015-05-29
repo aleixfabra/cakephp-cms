@@ -1,4 +1,8 @@
 <h1>Welcome to CakePHP CMS</h1>
+
+<h3>Installation & configuration</h3>
+<p><a href="https://github.com/aleixfabra/cakephp-cms/blob/master/README.md" target="_blank">README</a></p>
+
 <h3>Start</h3>
 <ul>
     <li>Access admin <?= $this->Html->link(__('here'), ['_name' => 'admin']) ?>.</li>

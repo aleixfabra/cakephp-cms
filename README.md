@@ -26,7 +26,6 @@ configuration relevant for your application.
 * Add logout button
 * Clean views (remove unnecessary classes, etc) => Layout plugin to style views
 * Add sidebar
-* Add Role model (A user has one role)
 * Roles CRUD
 * Authorization (who’s allowed to access what)
 * Migrations
